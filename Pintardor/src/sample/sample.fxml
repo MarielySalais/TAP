@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="1000.0">
+         <top>
+            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="1000.0" spacing="5.0" style="-fx-background-color: #D95BFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="252.0" text="PaintFX">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="46.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="9.14" offsetX="2.0" offsetY="2.0" radius="4.75" width="11.86">
+                           <color>
+                              <Color red="0.32335999608039856" green="0.03009999915957451" blue="0.4300000071525574" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Slider fx:id="slider_m" layoutX="70.0" layoutY="50.0" max="60.0" min="1.0" prefWidth="150.0" style="-fx-border-color: #000000;" value="1.0" />
+                  <Button fx:id="boton_cuadrado" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-border-color: #000000; -fx-border-radius: 17; -fx-background-radius: 17;" />
+                  <Button fx:id="boton_linea" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 17; -fx-border-radius: 17; -fx-border-color: #000000;" />
+                  <Button fx:id="boton_circular" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 17; -fx-border-radius: 17; -fx-border-color: #000000;" />
+                  <Button fx:id="boton_borrador" mnemonicParsing="false" onAction="#Borrar" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 17; -fx-border-radius: 17; -fx-border-color: #000000;" />
+                  <Button fx:id="boton_pincel" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 17; -fx-border-radius: 17; -fx-border-color: #000000;" />
+                  <Button fx:id="boton_guardar" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 17; -fx-border-radius: 17; -fx-border-color: #000000;" />
+                  <ColorPicker fx:id="col_pik" onAction="#Cambiar_color" prefWidth="150.0" style="-fx-border-color: #000000;" />
+                  <ComboBox fx:id="cmb_cambio" prefWidth="150.0" style="-fx-border-color: #000000;" />
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </HBox>
+         </top>
+         <center>
+            <Canvas fx:id="camvi" height="600.0" onMouseDragged="#Arrastrar" width="600.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
